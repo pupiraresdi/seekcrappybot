@@ -7,7 +7,7 @@ client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 client.once('ready', () => {
     console.log('Ready!');
-    client.user.setActivity(`26 Guilds | Do /invite To add me`, { type: 'WATCHING' });
+    client.user.setActivity('We must not allow other people\'s limited perceptions to define us.', { type: 'WATCHING' });
 });
 
 const defprefix=process.env.PREFIX
@@ -35,6 +35,11 @@ client.on('message', message => {
     const commandName = args.shift().toLowerCase();
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if (!command) return;
+    const usage = command.usage;
+    if(usage==='server') {
+        if(message.channel.type ==='dm')
+            return message.reply('Sorry, you can only use that command in a server')
+    }
 try {
     command.execute(client, message, args);
 } catch (error) {

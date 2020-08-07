@@ -20,11 +20,11 @@ module.exports = {
               embed.setColor('fd8061')
               embed.setFooter(`Challenged by`, `${message.author.avatarURL({ format: 'png', dynamic: true, size: 256 })}`);
           const sentMessage = await message.channel.send(embed);
-          await sentMessage.react('738996603746123846')
-          await sentMessage.react('738996651422646305')
-          sentMessage.awaitReactions((reaction, user) => user.id == hentai.id && (reaction.emoji.id == '738996603746123846' || reaction.emoji.id == '738996651422646305'),
+          await sentMessage.react('738809108127285289')
+          await sentMessage.react('738809001575186492')
+          sentMessage.awaitReactions((reaction, user) => user.id == hentai.id && (reaction.emoji.id == '738809108127285289' || reaction.emoji.id == '738809001575186492'),
                 { max: 1, time: 30000 }).then(collected => {
-                      if (collected.first().emoji.id == '738996603746123846') {
+                      if (collected.first().emoji.id == '738809108127285289') {
                               embed.setTitle('Challenge Approved - I have sent a dm')
                                sentMessage.edit(embed);
                               setTimeout(function(){ 
