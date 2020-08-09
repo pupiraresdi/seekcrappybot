@@ -46,6 +46,11 @@ module.exports = {
         **NodeJS version** ${process.version}
         `, true)
         .addField('Memory Usage', `${Math.round(process.memoryUsage().heapUsed / 1024 / 1024).toLocaleString()} MB`, true)
+        .setFooter(`Made by SeekNExpose#4157`, `${client.users.cache.get('713290150750453832').avatarURL({
+          format: 'png',
+          dynamic: true,
+          size: 256
+          })}`);
         return m.edit(s)
         //ITS HARD bet now show
         

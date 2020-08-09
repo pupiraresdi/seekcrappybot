@@ -18,4 +18,4 @@ module.exports = {
         })
         message.channel.send(`Prefix changed to \`${args[0]}\``)
     }
-}
+    }

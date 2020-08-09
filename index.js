@@ -29,6 +29,14 @@ client.on('message', message => {
         }
         prefix = client.prefixes[message.guild.id].prefixes;
     }
+
+    if (!message.content.startsWith(prefix) || message.author.bot) {
+		if(message.mentions.users.first()===client.user ) {
+			message.channel.send(`My prefix here is \`${prefix}\``)
+		}
+        return;
+    }
+    
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);

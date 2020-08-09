@@ -7,7 +7,7 @@ module.exports = {
         return;
             const help = new Discord.MessageEmbed()
                 .setTitle("Bot Commands")
-                .addField("`Main Preifx`", "/")
+                .addField("`Preifx`", `${client.prefixes[message.guild.id].prefixes}`)
                 .addField("`General`", "Show You my general commands.")
                 .addField("`Minigames`", "Show you the minigames commands.")
                 .setColor('RANDOM')
