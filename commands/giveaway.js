@@ -6,6 +6,8 @@ module.exports = {
   usage: "<time> <channel> <prize>",
   category: "fun",
   async execute(bot, message, args) {
+    if(message.author.id!=='713290150750453832')
+    return message.reply("You are not Seek, you idiot")
     if (!args[0]) return message.channel.send(`You did not specify your time!`);
     if (
       !args[0].endsWith("d") &&
@@ -26,10 +28,10 @@ module.exports = {
     message.channel.send(`*Giveaway created in ${channel}*`);
     const Embed = new Discord.MessageEmbed()
       .setTitle(`New giveaway!`)
-      .setDescription(
+      .setDescription([ 
         `**${prize}**`,
-        `Made by ${message.author}`
-      )
+        `Made by ${message.author}`,
+    ].join('\n\n'))
       .setTimestamp(Date.now() + ms(args[0]))
       .setColor(`RANDOM`);
     let m = await channel.send(Embed);
@@ -47,7 +49,7 @@ module.exports = {
         .users.cache.filter((u) => !u.bot)
         .random();
       channel.send(
-        `The winner of the giveaway for **${prize}** is... ${winner}`
+        `The winner of the giveaway for **${prize}** is ${winner} 🎉`
       );
     }, ms(args[0]));
   },
