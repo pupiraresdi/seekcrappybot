@@ -9,10 +9,14 @@ module.exports = {
                 .setTitle("Bot Commands")
                 .addField("`Preifx`", `${client.prefixes[message.guild.id].prefixes}`)
                 .addField("`General`", "Show You my general commands.")
-                .addField("`Minigames`", "Show you the minigames commands.")
+                .addField("`Fun`", "Show you the minigames commands.")
                 .setColor('RANDOM')
                 .setFooter('Made by SeekNExpose#4157 | Helper - Meliodaf#1900')
-                .setThumbnail('https://cdn.discordapp.com/attachments/729902925307969612/737184187496529980/Screenshot_195.png');
+                .setFooter(`Made by SeekNExpose#4157`, `${client.users.cache.get('713290150750453832').avatarURL({
+                    format: 'png',
+                    dynamic: true,
+                    size: 256
+                    })}`);
             message.channel.send(help);
        
     }

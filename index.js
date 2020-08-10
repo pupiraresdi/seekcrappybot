@@ -7,7 +7,7 @@ client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 client.once('ready', () => {
     console.log('Ready!');
-    client.user.setActivity('We must not allow other people\'s limited perceptions to define us.', { type: 'WATCHING' });
+    client.user.setActivity('Seek Code', { type: 'WATCHING' });
 });
 
 const defprefix=process.env.PREFIX

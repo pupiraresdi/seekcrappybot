@@ -7,7 +7,6 @@ module.exports = {
         return;
         const general = new Discord.MessageEmbed()
         .setTitle('General Commands')
-        .addField("meme", "`Shows a meme`")
         .addField("**support**", "`Show you a discord link to Legend World Support Server`")
         .addField("**invite**", "`Allows you to add me to your server`")
         .addField("**whois**", "`Show your discord information (Not private)`")
